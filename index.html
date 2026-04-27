@@ -4,115 +4,182 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IMPERIUS - Guild WYD</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
 font-family:Inter, sans-serif;
-background:#020207;
-color:#fff;
+color:#f5e6c8;
+overflow-x:hidden;
+background:#000;
 }
+
+/* FUNDO BASE (IMAGEM FORNECIDA) */
+body:before{
+content:"";
+position:fixed;
+top:0;left:0;
+width:100%;
+height:100%;
+background:url('/mnt/data/a_dark_dramatic_fantasy_gaming_website_homepage_s.png') center/cover no-repeat;
+opacity:0.85;
+z-index:-2;
+filter:brightness(0.55) contrast(1.1);
+}
+
+/* OVERLAY CHAMAS VERMELHAS */
+body:after{
+content:"";
+position:fixed;
+top:0;left:0;
+width:100%;
+height:100%;
+background:radial-gradient(circle at bottom, rgba(255,40,0,0.25), transparent 60%),
+radial-gradient(circle at top, rgba(120,0,0,0.35), transparent 55%);
+z-index:-1;
+}
+
 header{
-background:linear-gradient(180deg, rgba(0,0,0,.8), rgba(0,0,0,.4));
-padding:20px 40px;
+background:rgba(0,0,0,0.6);
+padding:18px 40px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 position:fixed;
 width:100%;
 z-index:1000;
-backdrop-filter: blur(8px);
+backdrop-filter: blur(6px);
+border-bottom:1px solid rgba(255,0,0,0.25);
 }
+
 .logo{
-font-family:Orbitron;
-font-weight:800;
-font-size:24px;
-letter-spacing:2px;
-color:#7c3aed;
+font-family:'Uncial Antiqua', cursive;
+font-size:28px;
+letter-spacing:3px;
+color:#8b0000;
+text-shadow:0 0 15px rgba(139,0,0,0.7);
 }
+
 nav a{
-color:#fff;
+color:#f5e6c8;
 text-decoration:none;
-margin-left:25px;
+margin-left:22px;
 font-size:14px;
-opacity:.8
+opacity:.85;
+transition:.3s;
 }
+nav a:hover{color:#ff2a2a}
+
 .hero{
 height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-background: radial-gradient(circle at center, #111 0%, #02030a 60%);
-padding:20px
+padding:20px;
 }
+
 .hero h1{
-font-family:Orbitron;
-font-size:64px;
-margin-bottom:20px;
-letter-spacing:4px
+font-family:'Uncial Antiqua', cursive;
+font-size:78px;
+letter-spacing:6px;
+color:#8b0000;
+text-shadow:0 0 25px rgba(139,0,0,0.8);
 }
+
 .hero p{
 max-width:700px;
-margin:0 auto 30px;
-opacity:.8;
-font-size:18px
+margin:20px auto 30px;
+font-size:18px;
+opacity:.9;
 }
+
 .btn{
 display:inline-block;
 padding:14px 28px;
-background:#7c3aed;
-color:white;
+background:linear-gradient(135deg,#5c0000,#b30000);
+color:#fff;
 text-decoration:none;
-border-radius:8px;
-font-weight:600;
+border-radius:6px;
+font-weight:700;
+margin:6px;
 transition:.3s;
-margin:5px;
+box-shadow:0 5px 20px rgba(255,0,0,0.2);
+cursor:pointer;
 }
-.btn:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 30px rgba(124,58,237,.4)
-}
+
+.btn:hover{transform:translateY(-3px)}
+
 .btn-outline{
 background:transparent;
-border:1px solid #7c3aed
+border:1px solid #8b0000;
+color:#8b0000;
 }
+
 section{
-padding:100px 20px;
+padding:90px 20px;
 max-width:1100px;
-margin:auto
+margin:auto;
 }
+
 .section-title{
-font-family:Orbitron;
-font-size:32px;
-margin-bottom:20px
+font-family:'Uncial Antiqua', cursive;
+font-size:38px;
+text-align:center;
+color:#8b0000;
+margin-bottom:20px;
 }
+
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
-margin-top:40px
+margin-top:40px;
 }
+
 .card{
-background:#0b0f1a;
+background:rgba(0,0,0,0.65);
 padding:25px;
-border-radius:12px;
-border:1px solid rgba(255,255,255,.05)
+border-radius:10px;
+border:1px solid rgba(139,0,0,0.3);
 }
-.card h3{
-margin-bottom:10px;
-color:#7c3aed
-}
+
+.card h3{color:#ff2a2a;margin-bottom:10px}
+
 .cta{
 text-align:center;
-background:linear-gradient(180deg,#0b0f1a,#06080f);
-border-radius:16px
+background:rgba(0,0,0,0.7);
+border-radius:14px;
+border:1px solid rgba(139,0,0,0.4);
 }
+
 footer{
 padding:40px;
 text-align:center;
 opacity:.6;
-font-size:14px
+font-size:14px;
+border-top:1px solid rgba(139,0,0,0.3);
+}
+
+/* MODAL SELEÇÃO */
+.modal{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+.modal-content{
+background:#0a0000;
+padding:30px;
+border:1px solid #8b0000;
+border-radius:10px;
+text-align:center;
 }
 </style>
 </head>
@@ -123,74 +190,76 @@ font-size:14px
 <nav>
 <a href="#sobre">Sobre</a>
 <a href="#regras">Regras</a>
-<a href="#recrutamento">Recrutamento</a>
-<a href="https://discord.gg/y9RzZzRf" target="_blank">Discord</a>
-<a href="https://chat.whatsapp.com/FI3cURd8eIcKGDp7XHzUOx" target="_blank">WhatsApp</a>
+<a onclick="openModal()">Recrutamento</a>
 </nav>
 </header>
 
 <section class="hero">
 <div>
 <h1>IMPERIUS</h1>
-<p>A elite domina. A IMPERIUS não é apenas uma guild — é uma força organizada criada para conquistar territórios, vencer guerras e dominar o WYD.</p>
-<a href="#recrutamento" class="btn">Solicitar Recrutamento</a>
-<a href="https://discord.gg/y9RzZzRf" target="_blank" class="btn btn-outline">Entrar no Discord</a>
+<p>Uma guild forjada no sangue das guerras do WYD. Estratégia, PvP e domínio absoluto definem nossa força.</p>
+<a class="btn" onclick="openModal()">Junte-se a nós</a>
 </div>
 </section>
 
 <section id="sobre">
-<h2 class="section-title">Sobre a Guild</h2>
-<p>A IMPERIUS é uma guild focada em PvP, organização e domínio estratégico dentro do WYD. Nosso objetivo é reunir jogadores comprometidos, ativos e preparados para guerras, eventos e conquistas dentro do jogo.</p>
+<h2 class="section-title">Sobre Nós</h2>
+<p>Somos mais de <b>40 membros ativos</b> entre PvPs e missões diárias, atuando com organização e foco em crescimento dentro do WYD.</p>
 
 <div class="cards">
 <div class="card">
-<h3>⚔️ PvP Forte</h3>
-<p>Participação ativa em guerras, invasões e eventos competitivos.</p>
+<h3>⚔️ PvP</h3>
+<p>Participação constante em guerras e combates.</p>
 </div>
-
 <div class="card">
 <h3>🛡️ Organização</h3>
-<p>Liderança ativa, comunicação e estratégia em grupo.</p>
+<p>Comunicação ativa e estratégia em grupo.</p>
 </div>
-
 <div class="card">
-<h3>👑 Elite</h3>
-<p>Recrutamento seletivo apenas para jogadores comprometidos.</p>
+<h3>🔥 Atividade</h3>
+<p>Membros ativos diariamente em missões e eventos.</p>
 </div>
 </div>
 </section>
 
 <section id="regras">
-<h2 class="section-title">Regras da Guild</h2>
+<h2 class="section-title">Regras</h2>
 <div class="cards">
 <div class="card">
 <h3>Respeito</h3>
-<p>Respeitar todos os membros da guild.</p>
+<p>Mantenha respeito dentro da guild.</p>
 </div>
-
 <div class="card">
 <h3>Atividade</h3>
-<p>Jogadores inativos podem ser removidos.</p>
+<p>Inatividade pode resultar em remoção.</p>
 </div>
-
 <div class="card">
 <h3>Participação</h3>
-<p>Participar das guerras e eventos da guild.</p>
+<p>Presença em guerras é essencial.</p>
 </div>
 </div>
-</section>
-
-<section id="recrutamento" class="cta">
-<h2 class="section-title">Recrutamento Aberto</h2>
-<p>Entre na IMPERIUS e lute ao lado da elite do WYD. Comunicação ativa e organização total via Discord e WhatsApp.</p>
-<br>
-<a class="btn" href="https://discord.gg/y9RzZzRf" target="_blank">Entrar no Discord</a>
-<a class="btn btn-outline" href="https://chat.whatsapp.com/FI3cURd8eIcKGDp7XHzUOx" target="_blank">Grupo WhatsApp</a>
 </section>
 
 <footer>
 IMPERIUS Guild - WYD © Todos os direitos reservados
 </footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-content">
+<h2 style="color:#8b0000">Escolha onde entrar</h2>
+<br>
+<a class="btn" href="https://discord.gg/y9RzZzRf" target="_blank">Discord</a>
+<a class="btn" href="https://chat.whatsapp.com/FI3cURd8eIcKGDp7XHzUOx" target="_blank">WhatsApp</a>
+<br><br>
+<a class="btn-outline" onclick="closeModal()">Fechar</a>
+</div>
+</div>
+
+<script>
+function openModal(){document.getElementById('modal').style.display='flex'}
+function closeModal(){document.getElementById('modal').style.display='none'}
+</script>
 
 </body>
 </html>
