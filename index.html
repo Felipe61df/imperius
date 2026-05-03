@@ -663,6 +663,23 @@ background:rgba(255,0,0,.08);
 .medal{
 font-size:22px;
 }
+
+.class-icon{
+
+display:inline-block;
+
+margin-right:6px;
+
+font-size:18px;
+
+color:#ffcc66;
+
+font-family:Arial,sans-serif;
+
+vertical-align:middle;
+
+}
+
 </style>
 </head>
 
@@ -884,14 +901,16 @@ function getClasseIcon(classe){
 
 const icons={
 
-BM:"🛡️",
-FM:"⚡",
+BM:"🛡",
+FM:"🔥",
 HT:"🏹",
-TK:"⚔️"
+TK:"⚔"
 
 };
 
-return icons[classe] || "⚡";
+return icons[classe] || "✦";
+
+}
 
 }
 
@@ -935,6 +954,20 @@ ${player.Nick}
 ${player.Level}
 </td>
 
+<td>
+
+<span class="class-icon">
+${getClasseIcon(player.Classe)}
+</span>
+
+${player.Classe}
+
+</td>
+
+<td>
+${player.Evolucao}
+</td>
+
 </tr>
 
 `;
@@ -942,7 +975,6 @@ ${player.Level}
 });
 
 }
-
 
 function openPvp(){
 
