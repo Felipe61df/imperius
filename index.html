@@ -582,7 +582,20 @@ flex-direction:column;
 }
 
 }
+<section class="war-timer">
 
+<h2>⚔ PRÓXIMA GUERRA</h2>
+
+<div id="countdown">
+Carregando...
+</div>
+
+<p>
+AZRAN • ORGANIZAÇÃO 19:00 • GUERRA 20:00
+</p>
+
+</section>
+  
   /* RANKING */
 
 .ranking{
@@ -684,6 +697,28 @@ font-family:Arial,sans-serif;
 
 vertical-align:middle;
 
+}
+
+  .war-timer{
+padding:80px 20px;
+text-align:center;
+background:#080808;
+border-top:1px solid #300000;
+border-bottom:1px solid #300000;
+}
+
+.war-timer h2{
+font-family:Cinzel;
+color:#ff0000;
+margin-bottom:25px;
+}
+
+#countdown{
+font-size:42px;
+font-weight:bold;
+color:#ffcc66;
+text-shadow:0 0 20px red;
+margin-bottom:15px;
 }
 
 </style>
@@ -1125,6 +1160,55 @@ console.error(error);
 
 }
 
+  const warDate = new Date("2026-05-15T20:00:00");
+
+function updateCountdown(){
+
+const now = new Date();
+
+const distance = warDate - now;
+
+if(distance <= 0){
+
+document.getElementById(
+"countdown"
+).innerHTML="⚔ GUERRA EM ANDAMENTO";
+
+return;
+
+}
+
+const hours =
+Math.floor(distance/(1000*60*60));
+
+const minutes =
+Math.floor(
+(distance%(1000*60*60))
+/
+(1000*60)
+);
+
+const seconds =
+Math.floor(
+(distance%(1000*60))
+/
+1000
+);
+
+document.getElementById(
+"countdown"
+).innerHTML=
+`${hours}h ${minutes}m ${seconds}s`;
+
+}
+
+setInterval(
+updateCountdown,
+1000
+);
+
+updateCountdown();
+  
 </script>
 
 </body>
