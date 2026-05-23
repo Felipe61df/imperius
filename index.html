@@ -364,92 +364,6 @@ padding:20px;
 }
 
 
-
-
-/* INSCRIÇÃO TORNEIO */
-
-.inscricao{
-padding:80px 20px;
-background:
-linear-gradient(rgba(0,0,0,.82),rgba(0,0,0,.95)),
-radial-gradient(circle at center, rgba(120,0,0,.35), transparent 55%);
-border-top:1px solid #300000;
-border-bottom:1px solid #300000;
-text-align:center;
-}
-
-.inscricao h2{
-font-family:Cinzel;
-color:#ff0000;
-font-size:34px;
-margin-bottom:12px;
-text-shadow:0 0 14px rgba(255,0,0,.6);
-}
-
-.inscricao .torneio-info{
-color:#ffcc66;
-font-family:Cinzel;
-letter-spacing:2px;
-margin-bottom:18px;
-}
-
-.inscricao p{
-max-width:720px;
-margin:0 auto 28px auto;
-line-height:1.7;
-opacity:.9;
-}
-
-.form-box{
-width:100%;
-max-width:850px;
-margin:0 auto;
-background:#090000;
-border:1px solid #700000;
-border-radius:18px;
-padding:18px;
-box-shadow:0 0 25px rgba(255,0,0,.25);
-}
-
-.form-box iframe{
-width:100%;
-height:850px;
-border:0;
-border-radius:12px;
-background:white;
-}
-
-.btn-inscricao{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-text-decoration:none;
-font-family:Cinzel;
-font-weight:700;
-letter-spacing:1px;
-}
-
-@media(max-width:900px){
-
-.inscricao{
-padding:55px 15px;
-}
-
-.inscricao h2{
-font-size:26px;
-}
-
-.form-box{
-padding:10px;
-}
-
-.form-box iframe{
-height:900px;
-}
-
-}
-
-
 /* FOOTER */
 
 footer{
@@ -862,7 +776,6 @@ text-align:center;
 <a href="#">INÍCIO</a>
 <a href="#sobre">SOBRE</a>
 <a href="#ranking">RANKING</a>
-<a href="#inscricao">INSCRIÇÃO</a>
 </nav>
 
 <div class="top-buttons">
@@ -905,11 +818,12 @@ Mais que uma guild, somos uma família.
 
 <div class="main-buttons">
 
-</button>
+<button class="btn"
+onclick="window.open('https://chat.whatsapp.com/FI3cURd8eIcKGDp7XHzUOx')">
 
-<a class="btn btn-inscricao" href="#inscricao">
-<img src="./TORNEIO.png">
-</a>
+<img src="./juntese.png">
+
+</button>
 
 </div>
 
@@ -997,42 +911,8 @@ Carregando...
 </div>
 
 <p>
-ORGANIZAÇÃO 21:30 • GUERRA DE TORRES 22:00
+ORGANIZAÇÃO 19:30 • GUERRA DE CIDADES • GELO 20:00 • ARMIA 20:20
 </p>
-
-</section>
-
-
-<section class="inscricao" id="inscricao">
-
-<h2>⚔ TORNEIO 2 VS 2 IMPERIUS</h2>
-
-<div class="torneio-info">
-SEXTA • 21H
-</div>
-
-<p>
-<p>
-⚔️ ENTRE PARA A BATALHA! ⚔️
-<br><br>
-O Torneio 2vs2 IMPERIUS está chegando e apenas as duplas mais fortes conquistarão a glória!
-<br><br>
-👑 Mostre sua força
-<br><br>
-🏆 Lute pelo domínio da arena
-<br><br>
-Preencha o formulário abaixo com o nick dos jogadores e o contato para confirmação da inscrição.
-</p>
-
-<div class="form-box">
-
-<iframe
-src="https://forms.gle/jujWTHTJ14fTrPBb9"
-loading="lazy">
-Carregando formulário...
-</iframe>
-
-</div>
 
 </section>
 
@@ -1335,7 +1215,7 @@ console.error(error);
 
 }
 
-  const warDate = new Date("2026-05-21T22:00:00");
+  const warDate = new Date("2026-05-24T22:00:00");
 
 function updateCountdown(){
 
