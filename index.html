@@ -761,6 +761,180 @@ margin-bottom:15px;
 text-align:center;
 }
 
+  /* ================= TORNEIO ================= */
+
+.torneio-section{
+
+padding:90px 20px;
+
+background:
+linear-gradient(
+rgba(0,0,0,.92),
+rgba(5,0,0,.96)
+);
+
+display:flex;
+flex-direction:column;
+
+align-items:center;
+
+text-align:center;
+
+border-top:1px solid #300000;
+border-bottom:1px solid #300000;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.torneio-section::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+radial-gradient(
+circle at center,
+rgba(255,0,0,.12),
+transparent 70%
+);
+
+pointer-events:none;
+
+}
+
+.torneio-section h2{
+
+font-family:Cinzel;
+
+font-size:48px;
+
+font-weight:900;
+
+color:#ff0000;
+
+margin-bottom:25px;
+
+text-shadow:
+0 0 12px red,
+0 0 25px rgba(255,0,0,.6);
+
+letter-spacing:2px;
+
+z-index:2;
+
+}
+
+.torneio-sub{
+
+font-size:20px;
+
+line-height:1.9;
+
+color:#d8d8d8;
+
+margin-bottom:45px;
+
+max-width:950px;
+
+z-index:2;
+
+text-shadow:0 0 10px rgba(255,255,255,.08);
+
+}
+
+.torneio-img-box{
+
+width:100%;
+
+max-width:1250px;
+
+background:#0a0a0a;
+
+border:1px solid #500000;
+
+padding:16px;
+
+border-radius:22px;
+
+overflow:hidden;
+
+position:relative;
+
+z-index:2;
+
+box-shadow:
+0 0 25px rgba(255,0,0,.2),
+0 0 60px rgba(255,0,0,.12);
+
+transition:.4s;
+
+}
+
+.torneio-img-box:hover{
+
+transform:scale(1.01);
+
+box-shadow:
+0 0 35px rgba(255,0,0,.4),
+0 0 80px rgba(255,0,0,.2);
+
+}
+
+.torneio-img-box img{
+
+width:100%;
+
+display:block;
+
+border-radius:14px;
+
+}
+
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+.torneio-section{
+
+padding:60px 15px;
+
+}
+
+.torneio-section h2{
+
+font-size:30px;
+
+line-height:1.4;
+
+}
+
+.torneio-sub{
+
+font-size:15px;
+
+padding:0 10px;
+
+line-height:1.7;
+
+}
+
+.torneio-img-box{
+
+padding:10px;
+
+border-radius:16px;
+
+}
+
+}
+
 </style>
 </head>
 
@@ -831,9 +1005,32 @@ onclick="window.open('https://chat.whatsapp.com/FI3cURd8eIcKGDp7XHzUOx')">
 
 </section>
 
+<!-- TORNEIO -->
+
+<section class="torneio-section">
+
+<h2>⚔️ CHAVEAMENTO OFICIAL ⚔️</h2>
+
+<p class="torneio-sub">
+
+O Torneio IMPERIUS começa neste sábado às 20H!
+<br><br>
+🔥 COM UMA NOVIDADE ESPECIAL:
+<br>
+⚔️ TEREMOS 3 FINALISTAS! ⚔️
+
+</p>
+
+<div class="torneio-img-box">
+
+<img src="./chaveamento.png" alt="Chaveamento Imperius">
+
+</div>
+
+</section>
+
 
 <section class="features">
-
 <div class="card" onclick="openPvp()">
 
 <img src="./swords.png">
