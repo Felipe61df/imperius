@@ -812,21 +812,21 @@ pointer-events:none;
 
 font-family:Cinzel;
 
-font-size:48px;
+font-size:52px;
 
 font-weight:900;
 
-color:#ff0000;
-
 margin-bottom:25px;
 
-text-shadow:
-0 0 12px red,
-0 0 25px rgba(255,0,0,.6);
-
-letter-spacing:2px;
+letter-spacing:3px;
 
 z-index:2;
+
+color:#d4af37;
+
+text-shadow:
+0 0 8px rgba(255,215,0,.35),
+0 0 18px rgba(212,175,55,.25);
 
 }
 
@@ -936,85 +936,6 @@ transform:scale(1.04);
 filter:
 brightness(1.1)
 drop-shadow(0 0 25px red);
-
-}
-
-.campeao-overlay{
-
-position:absolute;
-
-bottom:30px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-z-index:3;
-
-width:100%;
-
-display:flex;
-
-justify-content:center;
-
-}
-
-.campeao-badge{
-
-background:
-linear-gradient(
-90deg,
-#3a0000,
-#900000,
-#3a0000
-);
-
-padding:18px 35px;
-
-border:1px solid #ff0000;
-
-border-radius:14px;
-
-font-family:Cinzel;
-
-font-size:28px;
-
-font-weight:900;
-
-letter-spacing:2px;
-
-color:#ffd700;
-
-box-shadow:
-0 0 20px rgba(255,0,0,.5),
-0 0 40px rgba(255,0,0,.25);
-
-text-shadow:
-0 0 10px gold;
-
-animation:glowChampion 2s infinite alternate;
-
-}
-
-@keyframes glowChampion{
-
-from{
-
-transform:scale(1);
-
-box-shadow:
-0 0 20px rgba(255,0,0,.4);
-
-}
-
-to{
-
-transform:scale(1.03);
-
-box-shadow:
-0 0 35px rgba(255,0,0,.7);
-
-}
 
 }
 
@@ -1155,12 +1076,6 @@ onclick="window.open('https://chat.whatsapp.com/FI3cURd8eIcKGDp7XHzUOx')">
 <div class="torneio-img-box campeoes-box">
 
 <img src="./campeoes.png" alt="Campeões Imperius">
-
-<div class="campeao-overlay">
-
-<div class="campeao-badge">
-👑 CAMPEÕES ATUAIS 👑
-</div>
 
 </div>
 
