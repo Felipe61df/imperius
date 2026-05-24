@@ -761,7 +761,7 @@ margin-bottom:15px;
 text-align:center;
 }
 
-  /* ================= TORNEIO ================= */
+  /* ================= CAMPEÕES ================= */
 
 .torneio-section{
 
@@ -896,8 +896,127 @@ border-radius:14px;
 
 }
 
+.campeoes-box{
 
-/* RESPONSIVO */
+position:relative;
+
+overflow:hidden;
+
+}
+
+.campeoes-box::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+linear-gradient(
+to top,
+rgba(0,0,0,.85),
+rgba(0,0,0,.1)
+);
+
+z-index:1;
+
+}
+
+.campeoes-box img{
+
+transition:1s;
+
+}
+
+.campeoes-box:hover img{
+
+transform:scale(1.04);
+
+filter:
+brightness(1.1)
+drop-shadow(0 0 25px red);
+
+}
+
+.campeao-overlay{
+
+position:absolute;
+
+bottom:30px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+z-index:3;
+
+width:100%;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.campeao-badge{
+
+background:
+linear-gradient(
+90deg,
+#3a0000,
+#900000,
+#3a0000
+);
+
+padding:18px 35px;
+
+border:1px solid #ff0000;
+
+border-radius:14px;
+
+font-family:Cinzel;
+
+font-size:28px;
+
+font-weight:900;
+
+letter-spacing:2px;
+
+color:#ffd700;
+
+box-shadow:
+0 0 20px rgba(255,0,0,.5),
+0 0 40px rgba(255,0,0,.25);
+
+text-shadow:
+0 0 10px gold;
+
+animation:glowChampion 2s infinite alternate;
+
+}
+
+@keyframes glowChampion{
+
+from{
+
+transform:scale(1);
+
+box-shadow:
+0 0 20px rgba(255,0,0,.4);
+
+}
+
+to{
+
+transform:scale(1.03);
+
+box-shadow:
+0 0 35px rgba(255,0,0,.7);
+
+}
+
+}
 
 @media(max-width:900px){
 
@@ -933,8 +1052,17 @@ border-radius:16px;
 
 }
 
+.campeao-badge{
+
+font-size:18px;
+
+padding:14px 20px;
+
+width:90%;
+
 }
 
+}
 </style>
 </head>
 
@@ -1005,32 +1133,42 @@ onclick="window.open('https://chat.whatsapp.com/FI3cURd8eIcKGDp7XHzUOx')">
 
 </section>
 
-<!-- TORNEIO -->
+  <!-- CAMPEÕES IMPERIUS -->
 
 <section class="torneio-section">
 
-<h2>⚔️ CHAVEAMENTO OFICIAL ⚔️</h2>
+<h2>👑 CAMPEÕES DO TORNEIO IMPERIUS 👑</h2>
 
 <p class="torneio-sub">
 
-O Torneio IMPERIUS começa neste sábado às 20H!
+⚔️ Os atuais soberanos da arena.
 <br><br>
-🔥 COM UMA NOVIDADE ESPECIAL:
+
+🔥 zedacova & BONNGADA 🔥
 <br>
-⚔️ TEREMOS 3 FINALISTAS! ⚔️
+
+🏆 Campeões oficiais do último Torneio IMPERIUS.
 
 </p>
 
-<div class="torneio-img-box">
+<div class="torneio-img-box campeoes-box">
 
-<img src="./CHAVEAMENTO.png" alt="Chaveamento Imperius">
+<img src="./campeoes.png" alt="Campeões Imperius">
+
+<div class="campeao-overlay">
+
+<div class="campeao-badge">
+👑 CAMPEÕES ATUAIS 👑
+</div>
+
+</div>
 
 </div>
 
 </section>
 
-
 <section class="features">
+
 <div class="card" onclick="openPvp()">
 
 <img src="./swords.png">
