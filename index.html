@@ -432,7 +432,74 @@ white-space:pre-line;
 .close-btn{
 margin-top:25px;
 }
+.bg-effects{
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:1;
+overflow:hidden;
+}
 
+.bg-effects::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at 20% 80%, rgba(255,0,0,.18), transparent 28%),
+radial-gradient(circle at 80% 20%, rgba(212,175,55,.10), transparent 25%),
+radial-gradient(circle at 50% 50%, rgba(255,0,0,.08), transparent 45%);
+animation:redGlow 6s ease-in-out infinite alternate;
+}
+
+.bg-effects::after{
+content:"";
+position:absolute;
+inset:-100px;
+background:
+radial-gradient(circle, rgba(255,80,0,.9) 1px, transparent 2px);
+background-size:90px 90px;
+opacity:.12;
+animation:embersMove 80s linear infinite;
+}
+
+@keyframes embersMove{
+
+from{
+transform:translateY(0);
+}
+
+to{
+transform:translateY(-600px);
+}
+
+}
+
+@keyframes redGlow{
+
+from{
+opacity:.45;
+}
+
+to{
+opacity:.9;
+}
+
+}
+
+.hero,
+header,
+.features,
+.sobre,
+.war-timer,
+.ranking,
+.torneio-section,
+footer,
+.modal{
+
+position:relative;
+z-index:2;
+
+}
 
 /* ================= RESPONSIVO ================= */
 
@@ -982,13 +1049,13 @@ padding:14px 20px;
 width:90%;
 
 }
-
 }
 </style>
 </head>
 
 <body>
-
+<div class="bg-effects"></div>
+  
 <section class="hero">
 
 <header>
