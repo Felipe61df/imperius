@@ -601,8 +601,7 @@ flex-direction:column;
 
 header{
 height:65px;
-padding:0 16px;
-gap:10px;
+padding:0 12px;
 }
 
 header img:first-child{
@@ -1089,58 +1088,6 @@ white-space:nowrap;
 background:rgba(5,5,5,.88);
 }
 }
-  .menu-toggle{
-display:none;
-background:transparent;
-border:none;
-color:white;
-font-size:34px;
-cursor:pointer;
-z-index:999999;
-}
-
-.mobile-menu{
-position:fixed;
-top:0;
-left:-260px;
-width:240px;
-height:100vh;
-background:rgba(5,0,0,.98);
-backdrop-filter:blur(10px);
-display:flex;
-flex-direction:column;
-padding-top:100px;
-gap:25px;
-transition:.4s;
-z-index:999998;
-border-right:1px solid #500000;
-box-shadow:0 0 30px rgba(255,0,0,.35);
-}
-
-.mobile-menu.active{
-left:0;
-}
-
-.mobile-menu a{
-color:white;
-text-decoration:none;
-font-family:Cinzel;
-font-size:18px;
-padding-left:30px;
-}
-
-@media(max-width:900px){
-.top-buttons{
-margin-left:auto;
-}
-.menu-toggle{
-display:block;
-}
-
-nav{
-display:none;
-}
-}
 @media(min-width:901px){
 
 .bg-effects{
@@ -1162,23 +1109,6 @@ background:#080808;
 
 }
   
-@media(min-width:901px){
-
-.hero{
-background-attachment:fixed;
-}
-
-}
-
-@media(max-width:900px){
-
-.hero{
-background-attachment:scroll;
-background-position:center top;
-}
-
-}
-  
 </style>
 </head>
 
@@ -1188,8 +1118,6 @@ background-position:center top;
 <section class="hero">
 
 <header>
-
-<button class="menu-toggle" onclick="openMenu()">☰</button>
 
 <img src="./brasao.png" alt="Logo">
 
@@ -1221,14 +1149,6 @@ onclick="window.open('https://chat.whatsapp.com/FI3cURd8eIcKGDp7XHzUOx')">
 
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
-
-<a href="#" onclick="closeMenu()">INÍCIO</a>
-<a href="#torneio" onclick="closeMenu()">TORNEIO</a>
-<a href="#sobre" onclick="closeMenu()">SOBRE</a>
-<a href="#ranking" onclick="closeMenu()">RANKING</a>
-
-</div>
 
 <div class="hero-content">
 
@@ -1353,10 +1273,6 @@ MEMBROS<br><b>40+</b>
 
 <div class="stat">
 VITÓRIAS<br><b>50+</b>
-</div>
-
-<div class="stat">
-TEMPO DE HISTÓRIA<br><b>1 ANO</b>
 </div>
 
 </div>
@@ -1609,13 +1525,6 @@ document.getElementById(
 
 }
 
-function openMenu(){
-document.getElementById("mobileMenu").classList.add("active");
-}
-
-function closeMenu(){
-document.getElementById("mobileMenu").classList.remove("active");
-}
 
 window.onclick=function(event){
 
@@ -1751,7 +1660,7 @@ document.getElementById(
 setInterval(
 updateCountdown,
 1000
-);      
+);
 
 updateCountdown();
   
