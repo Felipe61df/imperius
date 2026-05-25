@@ -52,8 +52,6 @@ background:
 linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.88)),
 url("./bg.png") center/cover no-repeat;
 
-background-attachment:fixed;
-
 display:flex;
 flex-direction:column;
 }
@@ -1173,6 +1171,21 @@ background:#050505;
 .sobre,
 .war-timer{
 background:#080808;
+}
+
+@media(min-width:901px){
+
+.hero{
+background-attachment:fixed;
+}
+
+}
+
+@media(max-width:900px){
+
+.hero{
+background-attachment:scroll;
+background-position:center top;
 }
 
 }
