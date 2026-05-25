@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+  
 <html lang="pt-BR">
 
 <head>
-
+  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -511,7 +512,7 @@ header,
 .war-timer,
 .ranking,
 .torneio-section,
-footer,
+footer{
 
 position:relative;
 z-index:2;
@@ -523,22 +524,6 @@ z-index:2;
 
 /* NOTEBOOK */
 
-@media screen and (max-width:1200px){
-
-.hero h1 img{
-width:500px;
-}
-
-.features{
-grid-template-columns:repeat(2,1fr);
-padding:50px;
-}
-
-}
-
-
-/* TABLET */
-
 @media screen and (max-width:900px){
 
 header{
@@ -549,52 +534,7 @@ padding:0 15px;
 header img:first-child{
 height:48px;
 }
-
-nav{
-display:none;
-}
-
-.top-buttons{
-gap:12px;
-}
-
-.top-btn img{
-height:24px;
-}
-
-.hero-content{
-padding:0 20px;
-}
-
-.guild{
-font-size:14px;
-letter-spacing:4px;
-}
-
-.hero h1 img{
-width:320px;
-}
-
-.subtitle{
-font-size:14px;
-line-height:1.5;
-}
-
-.features{
-grid-template-columns:1fr;
-padding:35px;
-}
-
-.sobre{
-padding:40px 25px;
-}
-
-.stats{
-flex-direction:column;
-}
-
-}
-
+  }
 
 /* ================= CELULAR ================= */
 @media(max-width:900px){
@@ -1087,7 +1027,145 @@ white-space:nowrap;
 .torneio-section{
 background:rgba(5,5,5,.88);
 }
-  }
+
+  .menu-toggle{
+
+display:none;
+
+background:transparent;
+
+border:none;
+
+color:white;
+
+font-size:34px;
+
+cursor:pointer;
+
+z-index:999999;
+
+}
+
+/* MENU MOBILE */
+
+.mobile-menu{
+
+position:fixed;
+
+top:0;
+left:-260px;
+
+width:240px;
+height:100vh;
+
+background:rgba(5,0,0,.98);
+
+backdrop-filter:blur(10px);
+
+display:flex;
+flex-direction:column;
+
+padding-top:100px;
+
+gap:25px;
+
+transition:.4s;
+
+z-index:999998;
+
+border-right:1px solid #500000;
+
+}
+
+.mobile-menu a{
+
+color:white;
+
+text-decoration:none;
+
+font-family:Cinzel;
+
+font-size:18px;
+
+padding-left:30px;
+
+transition:.3s;
+
+}
+
+.mobile-menu a:hover{
+
+color:#ff0000;
+
+text-shadow:0 0 10px red;
+
+transform:translateX(8px);
+
+}
+
+.mobile-menu.active{
+
+left:0;
+
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.menu-toggle{
+
+display:block;
+
+}
+
+nav{
+
+display:none;
+
+}
+
+}
+.menu-toggle{
+display:none;
+background:transparent;
+border:none;
+color:white;
+font-size:34px;
+cursor:pointer;
+z-index:999999;
+}
+
+.mobile-menu{
+position:fixed;
+top:0;
+left:-260px;
+width:240px;
+height:100vh;
+background:rgba(5,0,0,.98);
+backdrop-filter:blur(10px);
+display:flex;
+flex-direction:column;
+padding-top:100px;
+gap:25px;
+transition:.4s;
+z-index:999998;
+border-right:1px solid #500000;
+}
+
+.mobile-menu.active{
+left:0;
+}
+
+.mobile-menu a{
+color:white;
+text-decoration:none;
+font-family:Cinzel;
+font-size:18px;
+padding-left:30px;
+}
+
+}  
 </style>
 </head>
 
@@ -1097,6 +1175,10 @@ background:rgba(5,5,5,.88);
 <section class="hero">
 
 <header>
+
+<button class="menu-toggle" onclick="openMenu()">
+☰
+</button>
 
 <img src="./brasao.png" alt="Logo">
 
@@ -1127,6 +1209,24 @@ onclick="window.open('https://chat.whatsapp.com/FI3cURd8eIcKGDp7XHzUOx')">
 </div>
 
 </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+
+<a href="#" onclick="closeMenu()">INÍCIO</a>
+
+<a href="#torneio" onclick="closeMenu()">
+TORNEIO
+</a>
+
+<a href="#sobre" onclick="closeMenu()">
+SOBRE
+</a>
+
+<a href="#ranking" onclick="closeMenu()">
+RANKING
+</a>
+
+</div>
 
 
 <div class="hero-content">
@@ -1503,7 +1603,13 @@ document.getElementById(
 ).style.display="none";
 
 }
+function openMenu(){
+document.getElementById("mobileMenu").classList.add("active");
+}
 
+function closeMenu(){
+document.getElementById("mobileMenu").classList.remove("active");
+}
 
 window.onclick=function(event){
 
@@ -1517,12 +1623,10 @@ if(event.target===modal){
 closeModal();
 
 }
-
 }
 
-
 window.onload=async function(){
-
+  
 try{
 
 const response=
